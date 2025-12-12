@@ -1,0 +1,23 @@
+# configs/xlm_roberta_baseline.yaml
+# Baseline multilingual model for sentiment classification
+
+name: "xlm-roberta-baseline"
+description: "XLM-RoBERTa base model - no fine-tuning"
+
+provider: "huggingface"
+model: "xlm-roberta-base"
+
+# Task configuration
+task_type: "text-classification"
+num_labels: 3  # POSITIVE (0), NEGATIVE (1), NEUTRAL (2)
+
+# Inference settings
+temperature: 0.3
+max_tokens: 50
+batch_size: 8
+
+# Reproducibility
+seed: 42
+
+# No fine-tuned weights (using pretrained as-is)
+fine_tuned_weights: null

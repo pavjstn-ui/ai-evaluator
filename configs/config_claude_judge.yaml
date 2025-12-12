@@ -1,0 +1,32 @@
+# configs/claude_judge.yaml
+# Claude as an evaluator - scores LLM outputs on rubrics
+
+name: "claude-judge-semantic"
+description: "Claude 3 Sonnet as semantic evaluator using rubrics"
+
+provider: "anthropic"
+model: "claude-3-5-sonnet-20241022"
+
+system_prompt: |
+  You are an expert evaluator of language model outputs.
+  You will score outputs based on provided rubrics.
+  
+  Your task:
+  1. Read the expected output
+  2. Read the actual output
+  3. Score each criterion 0-5
+  4. Provide brief reasoning
+  
+  Return ONLY valid JSON with this structure:
+  {
+    "scores": {"criterion_name": score_0_to_5, ...},
+    "reasoning": "brief explanation",
+    "overall_score": 0.0 to 5.0
+  }
+
+# Inference settings
+temperature: 0.3  # Consistent, but allow some variation
+max_tokens: 500
+
+# Reproducibility
+seed: 42

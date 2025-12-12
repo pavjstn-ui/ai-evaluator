@@ -1,0 +1,23 @@
+# configs/xlm_roberta_finetuned.yaml
+# Fine-tuned XLM-RoBERTa for Czech/Slovak sentiment
+
+name: "xlm-roberta-finetuned-czech"
+description: "XLM-RoBERTa fine-tuned on Czech product reviews"
+
+provider: "huggingface"
+model: "xlm-roberta-base"
+
+# Use fine-tuned weights
+fine_tuned_weights: "./models/czech_sentiment_finetuned"
+
+# Task configuration
+task_type: "text-classification"
+num_labels: 3  # POSITIVE, NEGATIVE, NEUTRAL
+
+# Inference settings
+temperature: 0.1  # More confident (lower temp)
+max_tokens: 50
+batch_size: 8
+
+# Reproducibility
+seed: 42

@@ -1,0 +1,151 @@
+# suites/basic/ - 10 Sample Test Cases for Sentiment Evaluation
+
+---
+# Test 1: Obvious positive
+id: "sentiment_001"
+task: "Classify the sentiment of this Czech review as POSITIVE, NEGATIVE, or NEUTRAL."
+input: "Výborný produkt! Velmi spokojený s kvalitou a dodáním."
+expected: "POSITIVE"
+rubric:
+  accuracy:
+    weight: 0.8
+    rule: "exact_match"
+  confidence:
+    weight: 0.2
+    rule: "score_above_0.85"
+tags: ["domain:sentiment", "language:czech", "difficulty:easy", "risk_level:low"]
+
+---
+# Test 2: Obvious negative
+id: "sentiment_002"
+task: "Classify the sentiment of this Czech review as POSITIVE, NEGATIVE, or NEUTRAL."
+input: "Hrozná kvalita. Nefunguje vůbec. Ztráta peněz."
+expected: "NEGATIVE"
+rubric:
+  accuracy:
+    weight: 0.8
+    rule: "exact_match"
+  confidence:
+    weight: 0.2
+    rule: "score_above_0.85"
+tags: ["domain:sentiment", "language:czech", "difficulty:easy", "risk_level:low"]
+
+---
+# Test 3: Neutral/mixed
+id: "sentiment_003"
+task: "Classify the sentiment of this Czech review as POSITIVE, NEGATIVE, or NEUTRAL."
+input: "Produkt je průměrný. Funguje, ale nic speciálního."
+expected: "NEUTRAL"
+rubric:
+  accuracy:
+    weight: 0.8
+    rule: "exact_match"
+  confidence:
+    weight: 0.2
+    rule: "score_above_0.7"
+tags: ["domain:sentiment", "language:czech", "difficulty:medium", "risk_level:low"]
+
+---
+# Test 4: Sarcasm (harder)
+id: "sentiment_004"
+task: "Classify the sentiment of this Czech review as POSITIVE, NEGATIVE, or NEUTRAL."
+input: "Skvělé! Vypadá to, že to není vůbec padělané."
+expected: "NEGATIVE"
+rubric:
+  accuracy:
+    weight: 0.8
+    rule: "exact_match"
+  confidence:
+    weight: 0.2
+    rule: "score_above_0.7"
+tags: ["domain:sentiment", "language:czech", "difficulty:hard", "risk_level:medium"]
+
+---
+# Test 5: Slovak (different language)
+id: "sentiment_005"
+task: "Classify the sentiment of this Slovak review as POSITIVE, NEGATIVE, or NEUTRAL."
+input: "Výborná kvalita, presne ako som očakával."
+expected: "POSITIVE"
+rubric:
+  accuracy:
+    weight: 0.8
+    rule: "exact_match"
+  confidence:
+    weight: 0.2
+    rule: "score_above_0.85"
+tags: ["domain:sentiment", "language:slovak", "difficulty:easy", "risk_level:low"]
+
+---
+# Test 6: Short, clear positive
+id: "sentiment_006"
+task: "Classify the sentiment of this Czech review as POSITIVE, NEGATIVE, or NEUTRAL."
+input: "Super!"
+expected: "POSITIVE"
+rubric:
+  accuracy:
+    weight: 0.8
+    rule: "exact_match"
+  confidence:
+    weight: 0.2
+    rule: "score_above_0.85"
+tags: ["domain:sentiment", "language:czech", "difficulty:easy", "risk_level:low"]
+
+---
+# Test 7: Mixed sentiment (leaning negative)
+id: "sentiment_007"
+task: "Classify the sentiment of this Czech review as POSITIVE, NEGATIVE, or NEUTRAL."
+input: "Kvalita je dobrá, ale cena je příliš vysoká."
+expected: "NEGATIVE"
+rubric:
+  accuracy:
+    weight: 0.8
+    rule: "exact_match"
+  confidence:
+    weight: 0.2
+    rule: "score_above_0.7"
+tags: ["domain:sentiment", "language:czech", "difficulty:medium", "risk_level:medium"]
+
+---
+# Test 8: Negative with some positive aspects
+id: "sentiment_008"
+task: "Classify the sentiment of this Czech review as POSITIVE, NEGATIVE, or NEUTRAL."
+input: "Design je krásný, ale rychle se to pokazilo."
+expected: "NEGATIVE"
+rubric:
+  accuracy:
+    weight: 0.8
+    rule: "exact_match"
+  confidence:
+    weight: 0.2
+    rule: "score_above_0.7"
+tags: ["domain:sentiment", "language:czech", "difficulty:medium", "risk_level:medium"]
+
+---
+# Test 9: Comparative (implicit sentiment)
+id: "sentiment_009"
+task: "Classify the sentiment of this Czech review as POSITIVE, NEGATIVE, or NEUTRAL."
+input: "Lépe než konkurence, ale ne nejlepší na trhu."
+expected: "POSITIVE"
+rubric:
+  accuracy:
+    weight: 0.8
+    rule: "exact_match"
+  confidence:
+    weight: 0.2
+    rule: "score_above_0.65"
+tags: ["domain:sentiment", "language:czech", "difficulty:hard", "risk_level:medium"]
+
+---
+# Test 10: Long, detailed negative
+id: "sentiment_010"
+task: "Classify the sentiment of this Czech review as POSITIVE, NEGATIVE, or NEUTRAL."
+input: "Objednal jsem tento produkt na základě dobrých recenzí, ale byl jsem velmi zklamaný. Kvalita materiálu je špatná, nástroje jsou prasklé a zákaznický servis neodpovídá na emaily."
+expected: "NEGATIVE"
+rubric:
+  accuracy:
+    weight: 0.8
+    rule: "exact_match"
+  confidence:
+    weight: 0.2
+    rule: "score_above_0.85"
+tags: ["domain:sentiment", "language:czech", "difficulty:medium", "risk_level:low"]
