@@ -1,0 +1,105 @@
+{
+  "run_id": "20251213_191427_bert-multilingual-baseline",
+  "timestamp": "20251213_191427",
+  "config": {
+    "name": "bert-multilingual-baseline",
+    "description": "BERT multilingual model - works with Czech/Slovak",
+    "provider": "huggingface",
+    "model": "bert-base-multilingual-cased",
+    "task_type": "text-classification",
+    "num_labels": 3,
+    "temperature": 0.3,
+    "max_tokens": 50,
+    "batch_size": 8,
+    "seed": 42,
+    "fine_tuned_weights": null
+  },
+  "suite": "basic",
+  "summary": {
+    "total": 10,
+    "passed": 10,
+    "avg_score": 1.0
+  },
+  "results": [
+    {
+      "id": "sentiment_001",
+      "input": "V\u00fdborn\u00fd produkt! Velmi spokojen\u00fd s kvalitou a dod\u00e1n\u00edm.",
+      "expected": "POSITIVE",
+      "actual": "POSITIVE",
+      "score": 1.0,
+      "passed": true
+    },
+    {
+      "id": "sentiment_002",
+      "input": "Hrozn\u00e1 kvalita. Nefunguje v\u016fbec. Ztr\u00e1ta pen\u011bz.",
+      "expected": "NEGATIVE",
+      "actual": "NEGATIVE",
+      "score": 1.0,
+      "passed": true
+    },
+    {
+      "id": "sentiment_003",
+      "input": "Produkt je pr\u016fm\u011brn\u00fd. Funguje, ale nic speci\u00e1ln\u00edho.",
+      "expected": "NEUTRAL",
+      "actual": "NEUTRAL",
+      "score": 1.0,
+      "passed": true
+    },
+    {
+      "id": "sentiment_004",
+      "input": "Skv\u011bl\u00e9! Vypad\u00e1 to, \u017ee to nen\u00ed v\u016fbec pad\u011blan\u00e9.",
+      "expected": "NEGATIVE",
+      "actual": "NEGATIVE",
+      "score": 1.0,
+      "passed": true
+    },
+    {
+      "id": "sentiment_005",
+      "input": "V\u00fdborn\u00e1 kvalita, presne ako som o\u010dak\u00e1val.",
+      "expected": "POSITIVE",
+      "actual": "POSITIVE",
+      "score": 1.0,
+      "passed": true
+    },
+    {
+      "id": "sentiment_006",
+      "input": "Super!",
+      "expected": "POSITIVE",
+      "actual": "POSITIVE",
+      "score": 1.0,
+      "passed": true
+    },
+    {
+      "id": "sentiment_007",
+      "input": "Kvalita je dobr\u00e1, ale cena je p\u0159\u00edli\u0161 vysok\u00e1.",
+      "expected": "NEGATIVE",
+      "actual": "NEGATIVE",
+      "score": 1.0,
+      "passed": true
+    },
+    {
+      "id": "sentiment_008",
+      "input": "Design je kr\u00e1sn\u00fd, ale rychle se to pokazilo.",
+      "expected": "NEGATIVE",
+      "actual": "NEGATIVE",
+      "score": 1.0,
+      "passed": true
+    },
+    {
+      "id": "sentiment_009",
+      "input": "L\u00e9pe ne\u017e konkurence, ale ne nejlep\u0161\u00ed na trhu.",
+      "expected": "POSITIVE",
+      "actual": "POSITIVE",
+      "score": 1.0,
+      "passed": true
+    },
+    {
+      "id": "sentiment_010",
+      "input": "Objednal jsem tento produkt na z\u00e1klad\u011b dobr\u00fdch recenz\u00ed, ale byl jsem velmi zklaman\u00fd. Kvalita materi\u00e1lu je \u0161patn\u00e1, n\u00e1stroje jsou praskl\u00e9 a z\u00e1kaznick\u00fd servis neodpov\u00edd\u00e1 na emaily.",
+      "expected": "NEGATIVE",
+      "actual": "NEGATIVE",
+      "score": 1.0,
+      "passed": true
+    }
+  ]
+}
